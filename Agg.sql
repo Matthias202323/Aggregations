@@ -53,4 +53,4 @@ INSERT INTO Sells(Product_Id,Sell_Date,Sell_Quantity) VALUES(9,'2019-05-08 12:35
 
 SELECT Product_Category, SUM(Sell_Quantity) AS Qty FROM Sells JOIN Products ON Products.Product_Id = Sells.Product_Id  GROUP BY Product_Category
 SELECT Products.Product_Category, SUM(Product_Price) as Price FROM Sells JOIN Products ON Products.Product_Id = Sells.Product_Id  GROUP BY Product_Category
-SELECT YEAR(Sell_Date) as _year, COUNT(Products.Product_Id) FROM Sells JOIN Products ON Products.Product_Id = Sells.Product_Id GROUP BY YEAR(Sell_Date)
+SELECT YEAR(Sell_Date) as _year, COUNT(Products.Product_Id) as nb_ventes FROM Sells JOIN Products ON Products.Product_Id = Sells.Product_Id GROUP BY YEAR(Sell_Date)
